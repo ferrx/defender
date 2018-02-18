@@ -1,6 +1,6 @@
 # defender [serverless]
     
-https://defender.ionep.io
+http://http://defender.ioneplab.com/
 
 ## Introduction
 The Defender prototype was developed to inform the general public about drug, device, and food product recalls.  Its vision is to combine product recall information from FDA, news outlets, and social media to provide users with a global view of current recalls.  
