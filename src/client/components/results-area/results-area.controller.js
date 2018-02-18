@@ -188,119 +188,106 @@ angular.module('defenderApp')
     $scope.currentPage = 1;
     $scope.recallResultsList = [];
     $scope.showInfoIsVisible = false;
+    $scope.lambdaUrl = 'https://k1zett9odh.execute-api.ca-central-1.amazonaws.com/prod/enforcements';
 
     $scope.getApiSearchTermFood = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/food/reason_for_recall:"' + $scope.currSearchTerm + '"+product_description:"' + $scope.currSearchTerm + '"+recalling_firm:"' + $scope.currSearchTerm + '"')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results;
-      //     defender.currentResults = results; //for map
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=food&search=(reason_for_recall:"' + $scope.currSearchTerm + '")')
+        .then(function (recallResultsList) {
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     $scope.getApiSearchTermDrug = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/drug/reason_for_recall:"' + $scope.currSearchTerm + '"+product_description:"' + $scope.currSearchTerm + '"+recalling_firm:"' + $scope.currSearchTerm + '"')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results;
-      //     defender.currentResults = results; //for map
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=drug&search=(reason_for_recall:"' + $scope.currSearchTerm + '")')
+        .then(function (recallResultsList) {
+          console.log(recallResultsList)
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          console.log(results)
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     $scope.getApiSearchTermDevice = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/device/reason_for_recall:"' + $scope.currSearchTerm + '"+product_description:"' + $scope.currSearchTerm + '"+recalling_firm:"' + $scope.currSearchTerm + '"')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results;
-      //     defender.currentResults = results; //for map
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=device&search=(reason_for_recall:"' + $scope.currSearchTerm + '")')
+        .then(function (recallResultsList) {
+          console.log(recallResultsList)
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          console.log(results)
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     $scope.getApiFood = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/food')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results;
-      //     defender.currentResults = results; //for map
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('food recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=food')
+        .then(function (recallResultsList) {
+          console.log(recallResultsList)
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          console.log(results)
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('food recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     $scope.getApiDrug = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/drug')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results; //view-scoped
-      //     defender.currentResults = results; //for map and other controllers
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('drug recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=drug')
+        .then(function (recallResultsList) {
+          console.log(recallResultsList)
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          console.log(results)
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('drug recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     $scope.getApiDevice = function () {
-      //TODO: LAMBDA
-      // $http.get('/api/things/device')
-      //   .success(function (recallResultsList) {
-      //     var response = JSON.parse(recallResultsList);
-      //     var results = response.results;
-      //     $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
-      //     $scope.recallResultsList = results;
-      //     defender.currentResults = results; //for map
-      //     $('#big-query-text-value').text(response.meta.results.total);
-      //     $('#big-query-text-label').text('device recalls in the past 90 days');
-      //     $scope.formatDates();
-      //     defender.updateAffectedAreaValues();
-      //   })
-      //   .error(function () {
-      //     $scope.errorHappenedResultsArea = true;
-      //   });
+      $http.get($scope.lambdaUrl + '?type=device')
+        .then(function (recallResultsList) {
+          console.log(recallResultsList)
+          var response = JSON.parse(recallResultsList.data);
+          var results = response.results;
+          console.log(results)
+          $scope.totalPages = Math.ceil(response.meta.results.total / $scope.pageSize);
+          $scope.recallResultsList = results;
+          defender.currentResults = results; //for map
+          $('#big-query-text-value').text(response.meta.results.total);
+          $('#big-query-text-label').text('device recalls in the past 90 days');
+          $scope.formatDates();
+          defender.updateAffectedAreaValues();
+        });
     };
 
     //on page init, get food data
