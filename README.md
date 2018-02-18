@@ -1,4 +1,4 @@
-# defender
+# defender [serverless]
     
 https://defender.ionep.io
 
