@@ -199,7 +199,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 90 days');
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -216,7 +216,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 90 days');
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -233,7 +233,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 90 days');
+          $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -250,7 +250,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('food recalls in the past 90 days');
+          $('#big-query-text-label').text('food recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -267,7 +267,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('drug recalls in the past 90 days');
+          $('#big-query-text-label').text('drug recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -284,7 +284,7 @@ angular.module('defenderApp')
           $scope.recallResultsList = results;
           defender.currentResults = results; //for map
           $('#big-query-text-value').text(response.meta.results.total);
-          $('#big-query-text-label').text('device recalls in the past 90 days');
+          $('#big-query-text-label').text('device recalls in the past 180 days');
           $scope.formatDates();
           defender.updateAffectedAreaValues();
         });
@@ -335,14 +335,14 @@ angular.module('defenderApp')
           $scope.recallResultsList = [];
 
           if ($('#selector-food').hasClass('selected')) {
-            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 90 days');
+            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" food recalls in the past 180 days');
             $scope.getApiSearchTermFood();
           } else if ($('#selector-drug').hasClass('selected')) {
-            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 90 days');
+            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" drug recalls in the past 180 days');
             $scope.getApiSearchTermDrug();
             console.log('called drug')
           } else if ($('#selector-device').hasClass('selected')) {
-            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 90 days');
+            $('#big-query-text-label').text('"' + $scope.currSearchTerm + '" device recalls in the past 180 days');
             $scope.getApiSearchTermDevice();
           }
         } else {

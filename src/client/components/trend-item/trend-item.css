@@ -1,18 +1,22 @@
 iframe {
-  width:100%;
-  height:329px;
+  width: 100%;
+  height: 329px;
 }
 
 .panel-body {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .news-item {
-  padding:10px;
-  height:200px;
+  padding: 10px;
+  height: 200px;
 }
 
 hr {
-  border:1px solid #ecf0f1;
+  border: 1px solid #ecf0f1;
+}
+
+.trend-items {
+  display: none;
 }
